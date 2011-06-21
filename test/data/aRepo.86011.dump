@@ -1,0 +1,89 @@
+SVN-fs-dump-format-version: 2
+
+UUID: e69698d3-d34e-4e6d-b957-e9daec51f3fd
+
+Revision-number: 86011
+Prop-content-length: 172
+Content-length: 172
+
+K 7
+svn:log
+V 71
+added unit tests, added domain object wrappers, updated common controls
+K 10
+svn:author
+V 6
+weroiu
+K 8
+svn:date
+V 27
+2008-07-23T21:54:43.168787Z
+PROPS-END
+
+Node-path: projects/some/thing/myProject/trunk/gui
+Node-kind: dir
+Node-action: change
+Prop-content-length: 195
+Content-length: 195
+
+K 10
+svn:ignore
+V 12
+*.suo
+*.ncb
+
+K 13
+svn:externals
+V 131
+FtpControls http://svnsvr/myRepo/projects/ui/customcomponents/trunk
+LookAndFeel http://svnsvr/myRepo/projects/ui/lookandfeel/trunk
+
+PROPS-END
+
+
+Node-path: projects/some/thing/myProject/trunk/gui/UnitTests
+Node-kind: dir
+Node-action: add
+Node-copyfrom-rev: 85980
+Node-copyfrom-path: projects/some/thing/oldMyProject/branches/tfs/gui/UnitTests
+
+
+Node-path: projects/some/thing/myProject/trunk/gui/UnitTests/GUI
+Node-kind: dir
+Node-action: delete
+
+Node-path: projects/some/thing/myProject/trunk/gui/UnitTests/GUI
+Node-kind: dir
+Node-action: add
+Node-copyfrom-rev: 85980
+Node-copyfrom-path: projects/some/thing/oldMyProject/branches/tfs/gui/UnitTests/GUI
+
+
+
+
+Node-path: projects/some/thing/myProject/trunk/gui/UnitTests/GUI/CommonControls
+Node-kind: dir
+Node-action: delete
+
+Node-path: projects/some/thing/myProject/trunk/gui/UnitTests/GUI/CommonControls
+Node-kind: dir
+Node-action: add
+Node-copyfrom-rev: 85980
+Node-copyfrom-path: projects/some/thing/oldMyProject/branches/tfs/gui/UnitTests/GUI/CommonControls
+
+
+
+
+Node-path: projects/some/thing/myProject/trunk/gui/UnitTests/GUI/CommonControls/ProductTests.cs
+Node-kind: file
+Node-action: delete
+
+Node-path: projects/some/thing/myProject/trunk/gui/UnitTests/GUI/CommonControls/AssetTests.cs
+Node-kind: file
+Node-action: add
+Node-copyfrom-rev: 85980
+Node-copyfrom-path: projects/some/thing/oldMyProject/branches/tfs/gui/UnitTests/GUI/CommonControls/AssetProductTests.cs
+Text-copy-source-md5: 2cbcd29b33affcb80b34699579701cd6
+Text-copy-source-sha1: a5febea99c3f0f7a092fb051d6f9b5162ad2d0a8
+
+

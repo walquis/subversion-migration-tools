@@ -1,0 +1,482 @@
+SVN-fs-dump-format-version: 2
+
+UUID: 7ca32877-f02b-4783-8a79-8e8bc5d1ce3d
+
+Revision-number: 1
+Prop-content-length: 137
+Content-length: 137
+
+K 7
+svn:log
+V 33
+test for filtering specific paths
+K 10
+svn:author
+V 9
+cwalquist
+K 8
+svn:date
+V 27
+2011-04-25T19:30:37.252821Z
+PROPS-END
+
+Node-path: projects
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: projects/myProject
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: projects/myProject/bin
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: projects/myProject/bin/x86
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: projects/myProject/bin/x86/Debug
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: projects/myProject/bin/x86/Debug/CMEMDLite.xml
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 3742
+Text-content-md5: fb691e071ab8ef4a359b3d063fdc8a6d
+Text-content-sha1: e2a58f0a47db2e4d1c7aa0ba6e4d9268ae8cf0d4
+Content-length: 3752
+
+PROPS-END
+<?xml version="1.0"?>
+  <CMEMDService>
+    <!-- Note that <setthreadpriorityhighest> defaults to true. If you do not set it, then the channel thread will have -->
+    <!-- a priority of highest. Only if you set it to "false" (case sensitive) will the thread have normal priority.    -->
+    <channels>
+      <!-- PROD CHANNEL 9 GLOBEX INTEREST RATE FUTURES MESSAGES -->
+      <channel number="9" compressed="true" enable="true">
+        <description>Globex Interest Rate Futures Messages</description>
+        <recordinput>false</recordinput>
+        <recordoutput>false</recordoutput>
+        <recordbeforedecompress>false</recordbeforedecompress>
+        <recordhistograms>false</recordhistograms>
+        <recordsequence>false</recordsequence>
+        <recordmissed>true</recordmissed>
+        <histogramprintinterval>900000</histogramprintinterval>
+        <totalbuckets>9</totalbuckets>
+        <bucket1>1</bucket1>
+        <bucket2>3</bucket2>
+        <bucket3>7</bucket3>
+        <bucket4>17</bucket4>
+        <bucket5>50</bucket5>
+        <bucket6>100</bucket6>
+        <bucket7>300</bucket7>
+        <bucket8>1000</bucket8>
+        <bucket9>10000</bucket9>
+        <queuemessages>false</queuemessages>
+        <enablebroadcast>false</enablebroadcast>
+        <multicastinaddr>233.119.160.16</multicastinaddr>
+        <multicastinport>10016</multicastinport>
+        <secondmulticastinaddr>255.255.255.255</secondmulticastinaddr>
+        <secondmulticastinport>10000</secondmulticastinport>
+        <multicastoutaddr>255.255.255.255</multicastoutaddr>
+        <multicastoutport>10000</multicastoutport>
+        <registrationname>DEV.CME.CMEMDLinux.IRFutures</registrationname>
+        <sendbindaddr>192.*</sendbindaddr>
+        <recvbindaddr>172.*</recvbindaddr>
+        <timetolive>4</timetolive>
+        <enableloopback>true</enableloopback>
+        <maxseqloss>3</maxseqloss>
+        <setthreadpriorityhighest>false</setthreadpriorityhighest>
+      </channel>
+      <!-- PROD CHANNEL 111 CBOT AGG FUTURES MESSAGES -->
+      <channel number="111" compressed="true" enabled="false">
+        <description>Globex CBOT Agg Futures Messages</description>
+        <recordinput>false</recordinput>
+        <recordoutput>false</recordoutput>
+        <recordbeforedecompress>false</recordbeforedecompress>
+        <recordhistograms>false</recordhistograms>
+        <recordsequence>false</recordsequence>
+        <recordmissed>true</recordmissed>
+        <histogramprintinterval>900000</histogramprintinterval>
+        <totalbuckets>9</totalbuckets>
+        <bucket1>1</bucket1>
+        <bucket2>3</bucket2>
+        <bucket3>7</bucket3>
+        <bucket4>17</bucket4>
+        <bucket5>50</bucket5>
+        <bucket6>100</bucket6>
+        <bucket7>300</bucket7>
+        <bucket8>1000</bucket8>
+        <bucket9>10000</bucket9>
+        <queuemessages>false</queuemessages>
+        <enablebroadcast>false</enablebroadcast>
+        <multicastinaddr>233.119.160.62</multicastinaddr>
+        <multicastinport>10092</multicastinport>
+        <secondmulticastinaddr>255.255.255.255</secondmulticastinaddr>
+        <secondmulticastinport>10000</secondmulticastinport>
+        <multicastoutaddr>255.255.255.255</multicastoutaddr>
+        <multicastoutport>10000</multicastoutport>
+        <registrationname>DEV.CME.CMEMDLinux.IRFutures</registrationname>
+        <sendbindaddr>192.*</sendbindaddr>
+        <recvbindaddr>172.*</recvbindaddr>
+        <timetolive>4</timetolive>
+        <enableloopback>true</enableloopback>
+        <maxseqloss>3</maxseqloss>
+        <setthreadpriorityhighest>false</setthreadpriorityhighest>
+      </channel>
+    </channels>
+  </CMEMDService>
+
+
+Node-path: projects/myProject/bin/x86/Debug/Market Data.log
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 0
+Text-content-md5: d41d8cd98f00b204e9800998ecf8427e
+Text-content-sha1: da39a3ee5e6b4b0d3255bfef95601890afd80709
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: projects/myProject/bin/x86/Debug/MarketData.log.1
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 0
+Text-content-md5: d41d8cd98f00b204e9800998ecf8427e
+Text-content-sha1: da39a3ee5e6b4b0d3255bfef95601890afd80709
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: projects/myProject/bin/x86/Debug/MarketData.log.2
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 0
+Text-content-md5: d41d8cd98f00b204e9800998ecf8427e
+Text-content-sha1: da39a3ee5e6b4b0d3255bfef95601890afd80709
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: projects/myProject/bin/x86/Debug/MarketData.log.3
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 0
+Text-content-md5: d41d8cd98f00b204e9800998ecf8427e
+Text-content-sha1: da39a3ee5e6b4b0d3255bfef95601890afd80709
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: projects/myProject/bin/x86/Release
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: projects/myProject/bin/x86/Release/Market Data.log
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 0
+Text-content-md5: d41d8cd98f00b204e9800998ecf8427e
+Text-content-sha1: da39a3ee5e6b4b0d3255bfef95601890afd80709
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: projects/myProject/bin/x86/Release/miNYApp.vshost.exe.config
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 1254
+Text-content-md5: 13b1daf0677ab7e9491cf95e7b0c6b69
+Text-content-sha1: 9bfb462ee12e93b8b482a3c468b48b86d1174a18
+Content-length: 1264
+
+PROPS-END
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="miNYApp.Settings1" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <applicationSettings>
+        <miNYApp.Settings1>
+            <setting name="BindingIP" serializeAs="String">
+                <value>192.*</value>
+            </setting>
+            <setting name="MDChannel" serializeAs="String">
+                <value>PROD.CME.CMEMDLinuxSrvc.GBXNYMEXFut30</value>
+                <!--<value>PROD.CME.CMEMDLinuxSrvc.GBXNYMEXGasFut31</value>-->                
+            </setting>
+            <setting name="UseMDLite" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="MCSOn" serializeAs="String">
+                <value>True</value>
+            </setting>
+        </miNYApp.Settings1>
+    </applicationSettings>
+</configuration>
+
+Revision-number: 2
+Prop-content-length: 116
+Content-length: 116
+
+K 7
+svn:log
+V 12
+updated logs
+K 10
+svn:author
+V 9
+cwalquist
+K 8
+svn:date
+V 27
+2011-04-25T19:32:32.463416Z
+PROPS-END
+
+Node-path: projects/myProject/bin/x86/Debug/Market Data.log
+Node-kind: file
+Node-action: change
+Text-content-length: 4
+Text-content-md5: ee567e026d2d4e1db0473ab9084d3f9e
+Text-content-sha1: 5ca2c015b57a74e28d4aae6a154b489368922827
+Content-length: 4
+
+HEY
+
+
+Node-path: projects/myProject/bin/x86/Debug/MarketData.log.1
+Node-kind: file
+Node-action: change
+Text-content-length: 6
+Text-content-md5: c3ce9117f9d2e795a72be87106cabb4a
+Text-content-sha1: eb044747f343a6d5a3007f3d10245e94cb97e0fd
+Content-length: 6
+
+HEY 1
+
+
+Node-path: projects/myProject/bin/x86/Debug/MarketData.log.2
+Node-kind: file
+Node-action: change
+Text-content-length: 6
+Text-content-md5: 847c7f083fbafe6059580654494c7cc1
+Text-content-sha1: 8a6365b20f9c42770bf9ecf121f8673eddff9a62
+Content-length: 6
+
+HEY 2
+
+
+Node-path: projects/myProject/bin/x86/Debug/MarketData.log.3
+Node-kind: file
+Node-action: change
+Text-content-length: 6
+Text-content-md5: a5770b943c9c0753be85378248d50936
+Text-content-sha1: 663685b849e003e18505180203962c6c2b91b945
+Content-length: 6
+
+HEY 3
+
+
+Node-path: projects/myProject/bin/x86/Release/Market Data.log
+Node-kind: file
+Node-action: change
+Text-content-length: 9
+Text-content-md5: 895067d41cf815abcb8fb5ded261352a
+Text-content-sha1: c9b2d8201cb3140404b45ac4e383ecfd7a630420
+Content-length: 9
+
+HI THERE
+
+
+Revision-number: 3
+Prop-content-length: 116
+Content-length: 116
+
+K 7
+svn:log
+V 12
+updated logs
+K 10
+svn:author
+V 9
+cwalquist
+K 8
+svn:date
+V 27
+2011-04-25T19:32:33.463416Z
+PROPS-END
+
+Node-path: projects/myProject/bin/x86/Debug/Market Data.log
+Node-kind: file
+Node-action: change
+Text-content-length: 4
+Text-content-md5: ee567e026d2d4e1db0473ab9084d3f9e
+Text-content-sha1: 5ca2c015b57a74e28d4aae6a154b489368922827
+Content-length: 4
+
+HEY
+
+
+Node-path: projects/myProject/bin/x86/Debug/MarketData.log.1
+Node-kind: file
+Node-action: change
+Text-content-length: 6
+Text-content-md5: c3ce9117f9d2e795a72be87106cabb4a
+Text-content-sha1: eb044747f343a6d5a3007f3d10245e94cb97e0fd
+Content-length: 6
+
+HEY 1
+
+
+Node-path: projects/myProject/bin/x86/Debug/MarketData.log.2
+Node-kind: file
+Node-action: change
+Text-content-length: 6
+Text-content-md5: 847c7f083fbafe6059580654494c7cc1
+Text-content-sha1: 8a6365b20f9c42770bf9ecf121f8673eddff9a62
+Content-length: 6
+
+HEY 2
+
+
+Node-path: projects/myProject/bin/x86/Debug/MarketData.log.3
+Node-kind: file
+Node-action: change
+Text-content-length: 6
+Text-content-md5: a5770b943c9c0753be85378248d50936
+Text-content-sha1: 663685b849e003e18505180203962c6c2b91b945
+Content-length: 6
+
+HEY 3
+
+
+Node-path: projects/myProject/bin/x86/Release/Market Data.log
+Node-kind: file
+Node-action: change
+Text-content-length: 9
+Text-content-md5: 895067d41cf815abcb8fb5ded261352a
+Text-content-sha1: c9b2d8201cb3140404b45ac4e383ecfd7a630420
+Content-length: 9
+
+HI THERE
+
+
+Revision-number: 4
+Prop-content-length: 116
+Content-length: 116
+
+K 7
+svn:log
+V 12
+updated logs
+K 10
+svn:author
+V 9
+cwalquist
+K 8
+svn:date
+V 27
+2011-04-25T19:32:34.463416Z
+PROPS-END
+
+Node-path: projects/myProject/bin/x86/Debug/Market Data.log
+Node-kind: file
+Node-action: change
+Text-content-length: 4
+Text-content-md5: ee567e026d2d4e1db0473ab9084d3f9e
+Text-content-sha1: 5ca2c015b57a74e28d4aae6a154b489368922827
+Content-length: 4
+
+HEY
+
+
+Node-path: projects/myProject/bin/x86/Debug/MarketData.log.1
+Node-kind: file
+Node-action: change
+Text-content-length: 6
+Text-content-md5: c3ce9117f9d2e795a72be87106cabb4a
+Text-content-sha1: eb044747f343a6d5a3007f3d10245e94cb97e0fd
+Content-length: 6
+
+HEY 1
+
+
+Node-path: projects/myProject/bin/x86/Debug/MarketData.log.2
+Node-kind: file
+Node-action: change
+Text-content-length: 6
+Text-content-md5: 847c7f083fbafe6059580654494c7cc1
+Text-content-sha1: 8a6365b20f9c42770bf9ecf121f8673eddff9a62
+Content-length: 6
+
+HEY 2
+
+
+Node-path: projects/myProject/bin/x86/Debug/MarketData.log.3
+Node-kind: file
+Node-action: change
+Text-content-length: 6
+Text-content-md5: a5770b943c9c0753be85378248d50936
+Text-content-sha1: 663685b849e003e18505180203962c6c2b91b945
+Content-length: 6
+
+HEY 3
+
+
+Node-path: projects/myProject/bin/x86/Release/Market Data.log
+Node-kind: file
+Node-action: change
+Text-content-length: 9
+Text-content-md5: 895067d41cf815abcb8fb5ded261352a
+Text-content-sha1: c9b2d8201cb3140404b45ac4e383ecfd7a630420
+Content-length: 9
+
+HI THERE
+
+

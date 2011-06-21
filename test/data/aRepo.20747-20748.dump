@@ -1,0 +1,84 @@
+SVN-fs-dump-format-version: 2
+
+UUID: e69698d3-d34e-4e6d-b957-e9daec51f3fd
+
+Revision-number: 20747
+Prop-content-length: 127
+Content-length: 127
+
+K 7
+svn:log
+V 28
+creating branch data 2.2.7.0
+K 10
+svn:author
+V 4
+blah
+K 8
+svn:date
+V 27
+2006-08-02T15:39:42.403428Z
+PROPS-END
+
+Node-path: projects/blah
+Node-kind: dir
+Node-action: add
+Node-copyfrom-rev: 20692
+Node-copyfrom-path: projects/blah2
+
+
+Node-path: projects/blah
+Node-kind: file
+Node-action: delete
+
+Node-path: projects/blah3
+Node-kind: file
+Node-action: add
+Node-copyfrom-rev: 20697
+Node-copyfrom-path: projects/blah4
+Text-copy-source-md5: 0f839bf4ec45c4d2bfeed30a5fc5f7d8
+Text-copy-source-sha1: c101513a7a62538cb486407a29ea9b5fc31a8ab7
+
+
+
+
+Revision-number: 20748
+Prop-content-length: 124
+Content-length: 124
+
+K 7
+svn:log
+V 25
+creating tag data 2.2.7.0
+K 10
+svn:author
+V 4
+blar
+K 8
+svn:date
+V 27
+2006-08-02T15:39:44.083655Z
+PROPS-END
+
+Node-path: projects/blah
+Node-kind: dir
+Node-action: add
+Node-copyfrom-rev: 20692
+Node-copyfrom-path: projects/blah2
+
+
+Node-path: projects/blah
+Node-kind: file
+Node-action: delete
+
+Node-path: projects/blah3
+Node-kind: file
+Node-action: add
+Node-copyfrom-rev: 20697
+Node-copyfrom-path: projects/blah6
+Text-copy-source-md5: 0f839bf4ec45c4d2bfeed30a5fc5f7d8
+Text-copy-source-sha1: c101513a7a62538cb486407a29ea9b5fc31a8ab7
+
+
+
+

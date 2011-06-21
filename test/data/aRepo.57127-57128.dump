@@ -1,0 +1,341 @@
+SVN-fs-dump-format-version: 2
+
+UUID: e69698d3-d34e-4e6d-b957-e9daec51f3fd
+
+Revision-number: 57127
+Prop-content-length: 173
+Content-length: 173
+
+K 7
+svn:log
+V 74
+1. Updated Orc version to v7.
+2. Added       UpdateAlert and its installer
+K 10
+svn:author
+V 4
+wert
+K 8
+svn:date
+V 27
+2007-12-18T16:04:50.601288Z
+PROPS-END
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/ReportServer/ReportServer.Library/ReportSets.xml
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/Reports/Tests/Tests/TestImporter.cs
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/Reports/Center.Tests/Tests/TestIntegration.cs
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/Center.Excel/CustomInstaller.Designer.cs
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/.Excel/CustomInstaller.cs
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/Excel/Excel.csproj
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/Excel.Installer/Excel.Installer.vdproj
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/UpdateAlert
+Node-kind: dir
+Node-action: add
+Prop-content-length: 82
+Content-length: 82
+
+K 10
+svn:ignore
+V 50
+[Bb]in
+obj
+[Dd]ebug
+[Rr]elease
+*.user
+*.aps
+*.eto
+
+PROPS-END
+
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/UpdateAlert/Program.cs
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/UpdateAlert/Properties
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/UpdateAlert/Properties/AssemblyInfo.cs
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/UpdateAlert/Properties/Resources.Designer.cs
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/UpdateAlert/Properties/Resources.resx
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/UpdateAlert/Properties/Settings.Designer.cs
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/UpdateAlert/Properties/Settings.settings
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/UpdateAlert/UpdateAlert.csproj
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/UpdateAlert/UpdateAlert.Designer.cs
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/UpdateAlert/UpdateAlert.cs
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/UpdateAlert/UpdateAlert.resx
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/xl/app.config
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/xl
+Node-kind: dir
+Node-action: add
+Prop-content-length: 82
+Content-length: 82
+
+K 10
+svn:ignore
+V 50
+[Bb]in
+obj
+[Dd]ebug
+[Rr]elease
+*.user
+*.aps
+*.eto
+
+PROPS-END
+
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/xl.vdproj
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Node-path: projects/sjtl/sdj/api/xl/trunk/source/xl.sln
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
+Revision-number: 57128
+Prop-content-length: 113
+Content-length: 113
+
+K 7
+svn:log
+V 14
+Moved remotely
+K 10
+svn:author
+V 4
+wert
+K 8
+svn:date
+V 27
+2007-12-18T16:06:22.818240Z
+PROPS-END
+
+Node-path: projects/aProject/Projects/models/options
+Node-action: delete
+
+
+Node-path: projects/sjtl/sdj/models/options
+Node-kind: dir
+Node-action: add
+Node-copyfrom-rev: 57127
+Node-copyfrom-path: projects/aProject/Projects/blah/blah
+
+

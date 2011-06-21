@@ -1,0 +1,56 @@
+SVN-fs-dump-format-version: 2
+
+UUID: e69698d3-d34e-4e6d-b957-e9daec51f3fd
+
+Revision-number: 51801
+Prop-content-length: 129
+Content-length: 129
+
+K 7
+svn:log
+V 23
+Created folder remotely
+K 10
+svn:author
+V 10
+akuznetsov
+K 8
+svn:date
+V 27
+2007-11-01T14:26:09.015247Z
+PROPS-END
+
+Node-path: projects/risk/rci/applications/dataqualitychecker/tags
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 51802
+Prop-content-length: 121
+Content-length: 121
+
+K 7
+svn:log
+V 15
+Copied remotely
+K 10
+svn:author
+V 10
+akuznetsov
+K 8
+svn:date
+V 27
+2007-11-01T14:26:39.996033Z
+PROPS-END
+
+Node-path: projects/risk/rci/applications/dataqualitychecker/trunk
+Node-kind: dir
+Node-action: add
+Node-copyfrom-rev: 51801
+Node-copyfrom-path: projects/risk/rci/applications/skewexporter/trunk
+
+

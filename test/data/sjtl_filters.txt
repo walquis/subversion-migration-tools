@@ -1,0 +1,18 @@
+migration-refs
+projects/sjtl/Loaders
+projects/sjtl/main
+projects/sjtl/messages
+projects/sjtl/sdj/api/data
+projects/sjtl/sdj/applications/dataqualitychecker
+projects/sjtl/sdj/applications/marketshredder
+projects/sjtl/sdj/applications/riskgatekeeper
+projects/sjtl/sdj/applications/tradeentrytool
+projects/sjtl/sdj/databases/leasesdatabase
+projects/sjtl/sdj/databases/rcidatabases
+projects/sjtl/sdj/models
+projects/sjtl/ubuntu_install
+projects/sjtl/ubuntuInstall
+projects/ti
+projects/positions
+%do_not_filter 0
+%do_not_filter 1

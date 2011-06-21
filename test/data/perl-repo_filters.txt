@@ -1,0 +1,5 @@
+migration-refs
+projects/newperl
+perl
+scripts/perl
+%substitute_copyfrom_path 107102 107060 projects/trs/KX/KxPcapReply/trunk/dpan/authors/id/T/TH/THIRDPARTY

@@ -1,0 +1,48 @@
+SVN-fs-dump-format-version: 2
+
+UUID: e69698d3-d34e-4e6d-b957-e9daec51f3fd
+
+Revision-number: 21022
+Prop-content-length: 121
+Content-length: 121
+
+K 7
+svn:log
+V 19
+Removed file/folder
+K 10
+svn:author
+V 7
+tieksle
+K 8
+svn:date
+V 27
+2006-08-21T21:55:00.829492Z
+PROPS-END
+
+Node-path: projects/sjtl/sdjtest
+Node-action: delete
+
+
+Revision-number: 21023
+Prop-content-length: 118
+Content-length: 118
+
+K 7
+svn:log
+V 19
+Removed file/folder
+K 10
+svn:author
+V 4
+rfan
+K 8
+svn:date
+V 27
+2006-08-22T13:26:04.826440Z
+PROPS-END
+
+Node-path: projects/sjtl/sdj
+Node-action: delete
+
+

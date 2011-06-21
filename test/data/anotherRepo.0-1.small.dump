@@ -1,0 +1,68 @@
+SVN-fs-dump-format-version: 2
+
+UUID: decd7ffa-4ce4-4ebd-b8ec-b02928544c3a
+
+Revision-number: 0
+Prop-content-length: 56
+Content-length: 56
+
+K 8
+svn:date
+V 27
+2011-02-01T21:31:02.930012Z
+PROPS-END
+
+Revision-number: 1
+Prop-content-length: 157
+Content-length: 157
+
+K 7
+svn:log
+V 51
+parent directories for sjtl projects to be migrated
+K 10
+svn:author
+V 10
+blah_blah_
+K 8
+svn:date
+V 27
+2011-01-25T22:28:37.278213Z
+PROPS-END
+
+Node-path: projects
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 2
+Prop-content-length: 143
+Content-length: 143
+
+K 7
+svn:log
+V 37
+blah aasdsdf asdfsda blah asdfsdf dkk
+K 10
+svn:author
+V 10
+weosfslsdk
+K 8
+svn:date
+V 27
+2011-01-26T16:15:12.355533Z
+PROPS-END
+
+Node-path: migration-refs
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+

@@ -1,0 +1,31 @@
+SVN-fs-dump-format-version: 2
+
+UUID: e69698d3-d34e-4e6d-b957-e9daec51f3fd
+
+Revision-number: 243913
+Prop-content-length: 155
+Content-length: 155
+
+K 7
+svn:log
+V 54
+blah blah blah blah blah blah blah blah blah blah bla.
+K 10
+svn:author
+V 6
+sdlkjg
+K 8
+svn:date
+V 27
+2010-04-29T20:56:06.311802Z
+PROPS-END
+
+Node-path: projects/applications/branches/someBranch/src/server/[er][path][0800-1200][1][1][blah][noebs].csv
+Node-kind: file
+Node-action: add
+Node-copyfrom-rev: 243838
+Node-copyfrom-path: projects/applications/branches/someOtherBranch/src/server/[er][path][0800-1200][1][1][blah][noebs].csv
+Text-copy-source-md5: 4dffc9c3905e0bcbac067192d2959f8d
+Text-copy-source-sha1: 279400b680e6f0134f22b3067baa20c58f89d6c2
+
+

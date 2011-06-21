@@ -1,0 +1,63 @@
+SVN-fs-dump-format-version: 2
+
+UUID: e69698d3-d34e-4e6d-b957-e9daec51f3fd
+
+Revision-number: 138
+Prop-content-length: 117
+Content-length: 117
+
+K 7
+svn:log
+V 16
+Check in ~/bin.
+
+K 10
+svn:author
+V 6
+asdfse
+K 8
+svn:date
+V 27
+2008-10-20T16:05:52.355124Z
+PROPS-END
+
+Node-path: users/asdfse/home/update-perl-tags
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 55
+Text-content-md5: 24f0751142362149184ef7a56506372d
+Text-content-sha1: fb2dda918711219a37cad573da78f40d31d9ada8
+Content-length: 65
+
+PROPS-END
+#!/usr/bin/env bash
+
+tags_directory="${HOME}/etc/tags"
+
+
+Revision-number: 139
+Prop-content-length: 120
+Content-length: 120
+
+K 7
+svn:log
+V 16
+Renamed remotely
+K 10
+svn:author
+V 9
+welsdjks3
+K 8
+svn:date
+V 27
+2008-10-06T15:35:01.088592Z
+PROPS-END
+
+Node-path: projects/newperl
+Node-kind: dir
+Node-action: add
+Node-copyfrom-rev: 137
+Node-copyfrom-path: projects/perl
+
+
