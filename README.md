@@ -21,27 +21,27 @@ As indicated, you may exclude sub-paths within the included hiearchy, optionally
 1. From the prod server, "svnadmin dump" an incremental dump up to the next round number, e.g.,  legacy.92673-100000.dump (filter-project.pl expects it this way).  scp this file to the /data/repo-retire/migrations/dumps directory.
 1. Filter the project, from first rev up to a round-number rev (.e.g., 320000), with *filter-project.pl*:
 <pre><code>
-$ filter-project.pl http://<host>/<repo> --project <myProject> --first-rev 120001 --last-rev 328000
+$ filter-project.pl --project myProject --first-rev 120001 --last-rev 328000
 </code></pre>
-1. Construct the migration references under /data/repo-retire/migrations/refs/<myProject>
-filter-project.pl creates /data/repo-retire/migrations/refs/<myProject>/svn-export.sh, which exports migration references corresponding to changes that it made when filtering.
+1. Construct the migration references under /data/repo-retire/migrations/refs/myProject
+filter-project.pl creates /data/repo-retire/migrations/refs/myProject/svn-export.sh, which exports migration references corresponding to changes that it made when filtering.
 <pre><code>
-$ cd /data/repo-retire/migrations/refs/<myProject>/migration-refs
+$ cd /data/repo-retire/migrations/refs/myProject/migration-refs
 $ ../svn-export.sh
 </code></pre>
-1.1. Figure out what containing directories need to already exist, and mkdir them under refs/<myProject>/**/*
+1.1. Figure out what containing directories need to already exist, and mkdir them under refs/myProject/**/*
 For instance, if filters.txt has a line like "projects/trading/myProject", then run "mkdir -p projects/trading".
 1.2. Create the new repo, and *svn import \-\-no-ignore* the migration-refs and the directories that need to pre-exist. *\--no-ignore* is very important; if it's missing, then files that SVN typically ignores, like .so's, will be missing in the new repo.
 <pre><code>
 $ svnadmin create /data/retire/repos/myProject
-$ cd /data/repo-retire/migrations/refs/<myProject>
+$ cd /data/repo-retire/migrations/refs/myProject
 $ svn import -m "containing dirs" projects http://localhost:8078/repos/myProject/projects
 $ svn import -m "copyfrom refs" migration-refs http://localhost:8078/repos/myProject/migration-refs
 </code></pre>
 1.1. Search the migration-refs references for svn:externals, using propset-migration-refs.pl
 (filter-project.pl created a migration-refs-map.csv for propset-migration-refs.pl to use).
 <pre><code>
-$ cd /data/repo-retire/migrations/refs/<myProject>/workspace
+$ cd /data/repo-retire/migrations/refs/myProject/workspace
 $ svn co http://localhost:8078/repos/myProject/migration-refs
 $ cd migration-refs
 $ propset-migration-refs.pl --url_map_file ../../migration-refs-map.csv
@@ -63,7 +63,7 @@ $ svnadmin load /data/repo-retire/repos/myProject/ < myProject.120001-328000.ren
 1. rsync the migrated repo to the production location.
 1. Softlink the hooks from /data/subversion/hooks:
 <pre><code>
-$ cd /data/subversion/repos/<repo>/hooks
+$ cd /data/subversion/repos/myrepo/hooks
 $ for i in commit-size.pl label-access-control.cfg check-case-insensitive.pl label-access-control.pl pre-commit pre-revprop-change README tags_protect_hook.pl
 > do
 >   ln -s ../../../hooks/$i
@@ -71,12 +71,12 @@ $ for i in commit-size.pl label-access-control.cfg check-case-insensitive.pl lab
 $ rm *.tmpl
 </code></pre>
 1. Set up the relevant access in the production repo.
-1. Switch over TeamCity.  This usually consists of changing one or two VCS roots, and adding a "Project.SvnRepository=http://<host>/repos/myProject" environment variable to the RC build configs.
+1. Switch over TeamCity.  This usually consists of changing one or two VCS roots, and adding a "Project.SvnRepository=http://myhost/repos/myProject" environment variable to the RC build configs.
 1. Set up the repo in FishEye (or switch it over and re-index, if it already exists for the original Subversion repo).
 1. Fix the dates in the first two or three revisions to come earlier than the initial migrated revision; otherwise, FishEye may get confused.  You will have to set up the revprop hook to allow this.  Here is an example from Perl...
 <pre><code>
-svn ps svn:date 2008-03-21T00:00:00.000000Z --revprop -r1 http://<host>/repos/<site>perl
-svn ps svn:date 2008-03-21T00:00:01.000000Z --revprop -r2 http://<host>/repos/<site>perl
+svn ps svn:date 2008-03-21T00:00:00.000000Z --revprop -r1 http://myhost/repos/siteperl
+svn ps svn:date 2008-03-21T00:00:01.000000Z --revprop -r2 http://myhost/repos/siteperl
 </code></pre>
 
 <h2>Some gotchas</h2>
@@ -84,9 +84,9 @@ svn ps svn:date 2008-03-21T00:00:01.000000Z --revprop -r2 http://<host>/repos/<s
 * A handful of files in e.g., <site>perl use Subversion variables ($URL$, etc).  In the course of checking-out or exporting such files (for resolving copyfrom-paths, for instance), Subversion will fill in the values of these variables.  When they are imported and then subsequently referenced by modified node-paths during an "svnadmin load", a checksum error will result, since their content has changed.  WORKAROUND: After exporting, unset these variables, and run md5sum on the file to confirm that the checksum matches the corresponding Node-copyfrom-path's checksum.
 * *Make sure that the migrated repo's UUID is different than the legacy repo's UUID*, otherwise TeamCity will get confused when it encounters svn:externals.  In particular, TeamCity uses the same revision for externals that appear to belong to the same repo that it's checking out.  You will see a failure like this:
 <pre><code>
-[14:08:57]: [VCS Root: <site>perl] Subversion update_external problem for /data/site/ ... jars/3rd/fastutil: svn: Unable to find repository location for 'http://<host>/legacy-repo/jars/3rd/fastutil/5.1.5/jar' in revision '11,488'
+[14:08:57]: [VCS Root: <site>perl] Subversion update_external problem for /data/site/ ... jars/3rd/fastutil: svn: Unable to find repository location for 'http://myhost/legacy-repo/jars/3rd/util/5.5/jar' in revision '11,488'
 </code></pre>
-The fix is easy: On the SVN server, use "svnadmin setuuid <repo> <uuid>" to change the uuid.
+The fix is easy: On the SVN server, use "svnadmin setuuid myrepo &lt;uuid&gt;" to change the uuid.
 * *Sometimes included pathnames change, especially early in the history*.  If this happens, the filter will appear to succeed, but the "svnadmin load" will fail, since the filter missed the path that was renamed.
 To fix, add the additional pathname and re-run the filter.
 
