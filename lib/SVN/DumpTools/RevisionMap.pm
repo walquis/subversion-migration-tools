@@ -22,15 +22,19 @@ sub renumber_mergeinfo_property {
 		my($path,$rev_list) = ($line =~ m!(.*):(.*)!) ;
 		my @mapped_rev_list;
 		foreach my $rev_range( split(",",$rev_list)) {
-			# Could be a single rev or a range...
 			my $mapped_rev_range;
-			if ($rev_range =~ /-/) {
+			my $non_inheritable = $rev_range =~ /\*$/;
+			$rev_range =~ s:\*$:: ; # Strip the non-inheritable marker, that is, a trailing '*', if it exists.
+			if ($rev_range =~ /-/) {   # If a revision range (as opposed to a single revision)...
 				my($from_rev,$to_rev) = split("-",$rev_range);
+
 				my $mapped_from_rev = rev_at_or_before($from_rev,$rev_map) + $revision_offset;
 				my $mapped_to_rev   = rev_at_or_before($to_rev  ,$rev_map) + $revision_offset;
 				$mapped_rev_range = ($mapped_from_rev eq $mapped_to_rev) ? $mapped_from_rev : "$mapped_from_rev-$mapped_to_rev";
-			} else {
+				$mapped_rev_range .= '*' if $non_inheritable;
+			} else {	# Range is a single rev
 				$mapped_rev_range = rev_at_or_before($rev_range,$rev_map) + $revision_offset;
+				$mapped_rev_range .= '*' if $non_inheritable;
 			}
 			push(@mapped_rev_list,$mapped_rev_range);
 		}

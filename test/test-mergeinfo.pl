@@ -4,7 +4,7 @@ use FindBin;
 use lib "$FindBin::Bin/../lib";
 use strict;
 use warnings;
-use Test::More tests => 5;
+use Test::More tests => 6;
 
 my $stderr;
 
@@ -49,4 +49,29 @@ my $mapped_mergeInfo_prop_offset_3 = <<"EOF";
 EOF
 chomp($mapped_mergeInfo_prop_offset_3);
 
-is( SVN::DumpTools::RevisionMap::renumber_mergeinfo_property($mergeInfo_prop, 3, \%project1_revmap), $mapped_mergeInfo_prop_offset_3, "Map same svn:mergeinfo property, but offset by 3 revisions");
+is( SVN::DumpTools::RevisionMap::renumber_mergeinfo_property($mergeInfo_prop, 3, \%project1_revmap), $mapped_mergeInfo_prop_offset_3, "Map same svn:mergeinfo property, but offsetting the map by 3");
+
+my $prop_with_non_inheritable_mergeinfo_range = <<"EOF";
+/project1/Instrument:183616-187627
+/project1/Instrument:174366-183410
+/project1/Instrument:187769-191713*,191714-191725
+/project1/Instrument2:187769-191713*,191714-191726
+EOF
+chomp($prop_with_non_inheritable_mergeinfo_range);
+
+my $prop_with_non_inheritable_mergeinfo_range_mapped = <<"EOF";
+/project1/Instrument:4324-4409
+/project1/Instrument:4177-4312
+/project1/Instrument:4415-4490*,4491
+/project1/Instrument2:4415-4490*,4491-4492
+EOF
+chomp($prop_with_non_inheritable_mergeinfo_range_mapped);
+
+our %project2_revmap;
+require 'data/project2.revmap.pl';	 # Loads %project2_revmap.
+
+# Should handle mergeinfo entries that contain a '*', marking a non-inheritable mergeinfo range.  That is, only the path on whcih the 
+# mergeinfo is explicitly set has had this range merged into it.  http://www.collab.net/community/subversion/articles/merge-info.html
+is( SVN::DumpTools::RevisionMap::renumber_mergeinfo_property($prop_with_non_inheritable_mergeinfo_range, 0, \%project2_revmap), $prop_with_non_inheritable_mergeinfo_range_mapped, "svn:mergeinfo property with non-inheritable marker '*' ");
+
+

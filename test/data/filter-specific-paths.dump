@@ -261,6 +261,18 @@ PROPS-END
     </applicationSettings>
 </configuration>
 
+Node-path: projects/myProject/branches/someBranch/server
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 31
+Text-content-md5: 8c638035e61fb943e5345ce54541bb19
+Text-content-sha1: f4f46bda42000eced0b7cbfd9e1e45867ac6dca7
+Content-length: 41
+
+PROPS-END
+This is a text file for tests.
+
 Revision-number: 2
 Prop-content-length: 116
 Content-length: 116

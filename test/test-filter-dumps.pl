@@ -37,7 +37,8 @@ open($outfh, '>', \$out);  # Open output filehandle to a variable.
 select((select($infh), $|=1)[0]);
 @filters = (
 	'projects/myProject',
-	'%exclude_path,projects/myProject.*/bin/x86/.*MarketData\.log.*'
+	'%exclude_path,projects/myProject.*/bin/x86/.*MarketData\.log.*',
+	'%exclude_path,projects/myProject/branches/[^/]*/server'
 );
 
 $f = SVN::DumpTools::Filter->new( \@filters, $infh, $outfh);
@@ -48,8 +49,8 @@ is($rev->{'revision-number'}, '1', "Should have gotten revision 1");
 my @nodepaths = grep(/^Node-path: /, split("\n", $out));
 # In this revision, there should be no paths matching "MarketData.log".
 my @paths = grep(m:MarketData\.log:, @nodepaths);
-is($#paths, -1, "Should not have seen any paths matching 'MarketData.log' in revision 1");
-is($#nodepaths, 8, "Should have seen nine paths besides those matching 'MarketData.log'.");
+is($#paths+1, 0, "Should have excluded all paths matching 'MarketData.log' in revision 1");
+is($#nodepaths+1, 9, "Should have included nine paths.");
 
 # Now test excluding paths with spaces...
 
@@ -79,8 +80,8 @@ is($rev->{'revision-number'}, '1', "Should have gotten revision 1");
 @nodepaths = grep(/^Node-path: /, split("\n", $out));
 # In this revision, there should be no paths matching "Market Data.log".
 @paths = grep(m:Market Data\.log:, @nodepaths);
-is($#paths, -1, "Should not have seen any paths matching 'Market Data.log' in revision 1");
-is($#nodepaths, 9, "Should have seen ten paths besides those matching 'MarketData.log'.");
+is($#paths+1, 0, "Should have excluded all paths matching 'Market Data.log' (note the space) in revision 1");
+is($#nodepaths+1, 11, "Should have included eleven paths");
 
 init_stderr(\$stderr);
 $infile = "$FindBin::Bin/data/filter-specific-paths.dump";
@@ -110,25 +111,25 @@ $f->print_revision($rev);	# To STDOUT, which has been dup'd to $out...
 # In this revision, "MarketData.log" should not have been filtered.
 @paths = grep(m:MarketData\.log:, @nodepaths);
 is($#paths, 2, "Revision 1 should not have any MarketData.log paths filtered out.");
-is($#nodepaths - $#paths, 9, "Should have seen nine paths in addition to 'MarketData.log'.");
+is($#nodepaths - $#paths, 10, "Should have seen ten paths in addition to 'MarketData.log'.");
 
 $rev = $f->next_filtered_revision;  # revision 2
 $f->print_revision($rev);	# To STDOUT, which has been dup'd to $out...
 is($rev->{'revision-number'}, '2', "Should have gotten revision 2");
 @nodepaths = grep(/^Node-path: /, split("\n", $out));
-is($#nodepaths, 13, "Should be two additional paths in stdout (All 'MarketData.log' paths in revision 2 should have been filtered out).");
+is($#nodepaths, 14, "Should be three additional paths in stdout (All 'MarketData.log' paths in revision 2 should have been filtered out).");
 
 $rev = $f->next_filtered_revision;  # revision 3
 $f->print_revision($rev);	# To STDOUT, which has been dup'd to $out...
 is($rev->{'revision-number'}, '3', "Should have gotten revision 3");
 @nodepaths = grep(/^Node-path: /, split("\n", $out));
-is($#nodepaths, 15, "Should be two additional paths in stdout (All 'MarketData.log' paths in revision 3 should have been filtered out).");
+is($#nodepaths, 16, "Should be three additional paths in stdout (All 'MarketData.log' paths in revision 3 should have been filtered out).");
 
 $rev = $f->next_filtered_revision;  # revision 4
 $f->print_revision($rev);	# To STDOUT, which has been dup'd to $out...
 is($rev->{'revision-number'}, '4', "Should have gotten revision 4");
 @nodepaths = grep(/^Node-path: /, split("\n", $out));
-is($#nodepaths, 20, "Expected 5 more paths (no paths in revision 4 should have been filtered out).");
+is($#nodepaths, 21, "Expected six more paths (no paths in revision 4 should have been filtered out).");
 
 print "\nTesting that filter pattern matches beginning of Node-path line...\n\n";
 
