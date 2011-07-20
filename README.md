@@ -18,13 +18,13 @@ Create snapshots that correspond to path references from outside the filters; cr
 The later steps assume a TeamCity/FishEye environment; ignore as necessary.
 
 1. As subversion user: Set up /data/repo-retire/migrations/dumps/***myProject***/filters.txt.  This is a simple filter spec that uses regexes to indicate which paths to include.  The filtering engine matches each pattern to the beginning of a Subversion Node-path. E.g.,...
-
-		migration-refs
-		projects/someProject
-		projects/someOtherProject
-		%exclude_path,projects/someProject/someBigNolongerneededDirectory
-		%exclude_path,projects/someProject/temporarilyProblematicTree,32855:282707
-
+<pre>
+migration-refs
+projects/someProject
+projects/someOtherProject
+%exclude_path,projects/someProject/someBigNolongerneededDirectory
+%exclude_path,projects/someProject/temporarilyProblematicTree,32855:282707
+</pre>
 As indicated in the example, sub-paths falling within the included hierarchy may be excluded, optionally specifying a range of revisions.  This came in handy for snipping out a chunk of history for one project that included huge files.
 1. Find the revision in the old repo ("show all" in the TortoiseSVN repo browser's log window is good for this) from which to start migrating.  This will be the smallest revision in the history of all the paths in filters.txt.
 1. Turn the relevant paths read-only in the legacy repo.
@@ -35,29 +35,29 @@ As indicated in the example, sub-paths falling within the included hierarchy may
 
 1. Construct the migration references under /data/repo-retire/migrations/refs/myProject
 filter-project.pl creates /data/repo-retire/migrations/refs/myProject/svn-export.sh, which exports migration references corresponding to changes that it made when filtering.
-
+<pre>
 		$ cd /data/repo-retire/migrations/refs/myProject/migration-refs
 		$ ../svn-export.sh
-
-1.1. Figure out what containing directories need to already exist, and mkdir them under refs/myProject/**/*
+</pre>
+>> a. Figure out what containing directories need to already exist, and mkdir them under refs/myProject/\*\*/\*.
 For instance, if filters.txt has a line like "projects/trading/myProject", then run "mkdir -p projects/trading".
-1.2. Create the new repo, and *svn import \-\-no-ignore* the migration-refs and the directories that need to pre-exist. *\--no-ignore* is very important; if it's missing, then files that SVN typically ignores, like .so's, will be missing in the new repo.
-
+>> b. Create the new repo, and *svn import \-\-no-ignore* the migration-refs and the directories that need to pre-exist. *\--no-ignore* is very important; if it's missing, then files that SVN typically ignores, like .so's, will be missing in the new repo.
+<pre>
 		$ svnadmin create /data/retire/repos/myProject
 		$ cd /data/repo-retire/migrations/refs/myProject
 		$ svn import -m "containing dirs" projects http://localhost:8078/repos/myProject/projects
 		$ svn import -m "copyfrom refs" migration-refs http://localhost:8078/repos/myProject/migration-refs
-
-1.1. Search the migration-refs references for svn:externals, using propset-migration-refs.pl
+</pre>
+>> c. Search the migration-refs references for svn:externals, using propset-migration-refs.pl
 (filter-project.pl created a migration-refs-map.csv for propset-migration-refs.pl to use).
-
+<pre>
 		$ cd /data/repo-retire/migrations/refs/myProject/workspace
 		$ svn co http://localhost:8078/repos/myProject/migration-refs
 		$ cd migration-refs
 		$ propset-migration-refs.pl --url_map_file ../../migration-refs-map.csv
 		$ svn diff
 		$ svn ci -m "apply properties for copyfrom refs"  # If any properties were found and applied.
-
+</pre>
 1. Renumber the repo
 Now that the migration refs and containing directories have been created, an offset for the repo can be determined.  The offset is equal to the revision of the new repo (typically 3).
 
