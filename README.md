@@ -4,10 +4,10 @@ The company grew rapidly, and four years later the Subversion repository is mons
 
 This toolset arose for the purpose of splitting the monolithic legacy repo into project-specific repos. 
 
-<h2>Procedure for migrating a given repo</h2>
+h2 Procedure for migrating a given repo
 This procedure uses the Perl tools at https://github.com/walquis/subversion-migration-tools.
 
-1. As subversion user: Set up /data/repo-retire/migrations/dumps/<project>/filters.txt.  This is a simple filter spec that uses regexes to indicate which paths to include.  The filtering engine matches each pattern to the beginning of a Subversion Node-path. E.g.,...
+1. As subversion user: Set up /data/repo-retire/migrations/dumps/_project_/filters.txt.  This is a simple filter spec that uses regexes to indicate which paths to include.  The filtering engine matches each pattern to the beginning of a Subversion Node-path. E.g.,...
 <pre><code>
 migration-refs
 projects/someProject
