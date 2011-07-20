@@ -39,7 +39,7 @@ filter-project.pl creates /data/repo-retire/migrations/refs/myProject/svn-export
 		$ cd /data/repo-retire/migrations/refs/myProject/migration-refs
 		$ ../svn-export.sh
 </pre>
->> a. Figure out what containing directories need to already exist, and mkdir them under refs/myProject/\*\*/\*.  For instance, if filters.txt has a line like "projects/trading/myProject", then run "mkdir -p projects/trading".
+>> a. Figure out what containing directories need to already exist, and mkdir them under refs/myProject/\*\*/\*.  For instance, if filters.txt has a line like "projects/trading/myProject", then run "mkdir -p projects/trading". 
 >> b. Create the new repo, and *svn import \-\-no-ignore* the migration-refs and the directories that need to pre-exist. *\--no-ignore* is very important; if it's missing, then files that SVN typically ignores, like .so's, will be missing in the new repo.
 <pre>
 		$ svnadmin create /data/retire/repos/myProject
